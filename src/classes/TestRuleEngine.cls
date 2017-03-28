@@ -160,22 +160,12 @@ public class TestRuleEngine {
         r.setExpression(expr);   
         retVal = r.eval(bindings) ;
         System.assertEquals(false, retVal);
-    }
-    
-    public static testmethod void debugTest(){
-        Map<String, String> bindings = initBindings();
-    	Operations opObj = initOperations();
         
-        //declaration
-        String expr ;
-        Rule r = new Rule() ;
-        Boolean retVal;
-        
-        expr  = 'Val4 == "ruleengine"' ;
+        //Test comma separated value
+        expr  = 'Val1 == 1,2,3,4,5,6,7,100'; 
         r.setExpression(expr);   
         retVal = r.eval(bindings) ;
         System.assertEquals(true, retVal);
-    }
-    
-
+        
+    }  
 }
