@@ -1,9 +1,7 @@
 # SFDCRules
 Simple yet powerful Rule Engine for Salesforce - SFDCRules
 
-![SFDC Rule Engine] [image1]
-
-[image1]: http://www.jitendrazaa.com/blog/wp-content/uploads/2017/03/SFDCRules-1024x447.jpg "SFDC Rule Engine" 
+![SFDC Rule Engine](http://www.jitendrazaa.com/blog/wp-content/uploads/2017/03/SFDCRules-1024x447.jpg)
 
 #### [Read Blog post here](http://www.jitendrazaa.com/blog/salesforce/sfdcrules-simple-yet-powerful-rule-engine-for-salesforce/)
 
@@ -24,7 +22,8 @@ opObj.registerOperation(OperationFactory.getInstance('||'));
 opObj.registerOperation(OperationFactory.getInstance('('));
 opObj.registerOperation(OperationFactory.getInstance(')'));
 opObj.registerOperation(OperationFactory.getInstance('<'));
-opObj.registerOperation(OperationFactory.getInstance('<=')); opObj.registerOperation(OperationFactory.getInstance('>'));
+opObj.registerOperation(OperationFactory.getInstance('<=')); 
+opObj.registerOperation(OperationFactory.getInstance('>'));
 opObj.registerOperation(OperationFactory.getInstance('>='));
 
 //Define bindings, which will replace variables while
