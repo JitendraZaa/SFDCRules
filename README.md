@@ -34,7 +34,7 @@ bindings.put('Case.IsEscalated'.toLowerCase(), 'false');
 bindings.put('Case.age_mins__c'.toLowerCase(), '62'); 
 
 //Define rule
-String expr  = 'Case.OwnerName__c == Minal || ( Case.age_mins__c &lt; 75 && Case.IsEscalated == false )' ; 
+String expr  = 'Case.OwnerName__c == Minal || ( Case.age_mins__c < 75 && Case.IsEscalated == false )' ; 
 
 //Initialize Rule Engine
 Rule r = new Rule().setExpression(expr);   
