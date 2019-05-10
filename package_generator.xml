@@ -1,0 +1,1051 @@
+<?xml version="1.0"?>
+<project name="sfdc" xmlns:sf="antlib:com.salesforce">
+	
+	<property name="stage.dir" value="src"/>
+	<property name="target" value="package.xml"/>
+	
+	<target name="generatePackage">
+		<echo file="${stage.dir}/${target}"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+<types>
+        <members>*</members>
+        <name>SharingCriteriaRule</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>SharingOwnerRule</name>
+    </types>   
+    <types>
+        <members>*</members>
+        <name>WaveApplication</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WaveDashboard</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WaveDataflow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WaveDataset</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WaveLens</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>WaveTemplateBundle</name>
+    </types>                                
+]]></echo>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomApplication" />
+			<param name="objext"  value="app" />
+			<param name="objdir"  value="applications" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomLabels" />
+			<param name="objext"  value="label" />
+			<param name="objdir"  value="labels" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomPermission" />
+			<param name="objext"  value="customPermission" />
+			<param name="objdir"  value="customPermissions" />
+			<param name="objflt"  value="*" />
+		</antcall>		
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="AssignmentRules" />
+			<param name="objext"  value="assignmentRules" />
+			<param name="objdir"  value="assignmentRules" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="AutoResponseRules" />
+			<param name="objext"  value="autoResponseRules" />
+			<param name="objdir"  value="autoResponseRules" />
+			<param name="objflt"  value="*" />
+		</antcall>		
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ApprovalProcess" />
+			<param name="objext"  value="approvalProcess" />
+			<param name="objdir"  value="approvalProcesses" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="AuthProvider" />
+			<param name="objext"  value="authprovider" />
+			<param name="objdir"  value="authproviders" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ApexClass" />
+			<param name="objext"  value="cls" />
+			<param name="objdir"  value="classes" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ApexComponent" />
+			<param name="objext"  value="component" />
+			<param name="objdir"  value="components" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ApexPage" />
+			<param name="objext"  value="page" />
+			<param name="objdir"  value="pages" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ApexTrigger" />
+			<param name="objext"  value="trigger" />
+			<param name="objdir"  value="triggers" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Community" />
+			<param name="objext"  value="community" />
+			<param name="objdir"  value="communities" />
+			<param name="objflt"  value="*" />
+		</antcall>
+	
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomObject" />
+			<param name="objext"  value="object" />
+			<param name="objdir"  value="objects" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomObjectTranslation" />
+			<param name="objext"  value="objectTranslation" />
+			<param name="objdir"  value="objectTranslations" />
+			<param name="objflt"  value="*" />
+		</antcall>			
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomPageWebLink" />
+			<param name="objext"  value="weblink" />
+			<param name="objdir"  value="weblinks" />
+			<param name="objflt"  value="*" />
+		</antcall>	
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomSite" />
+			<param name="objext"  value="site" />
+			<param name="objdir"  value="sites" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ConnectedApp" />
+			<param name="objext"  value="connectedApp" />
+			<param name="objdir"  value="connectedApps" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomApplicationComponent" />
+			<param name="objext"  value="customApplicationComponent" />
+			<param name="objdir"  value="customApplicationComponents" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomObjectTranslation" />
+			<param name="objext"  value="customObjectTranslation" />
+			<param name="objdir"  value="customObjectTranslations" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomTab" />
+			<param name="objext"  value="tab" />
+			<param name="objdir"  value="tabs" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Datacategorygroup" />
+			<param name="objext"  value="datacategorygroup" />
+			<param name="objdir"  value="dataCategoryGroups" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="DataSource" />
+			<param name="objext"  value="dataSource" />
+			<param name="objdir"  value="dataSources" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="FieldSet" />
+			<param name="objext"  value="fieldSet" />
+			<param name="objdir"  value="fieldSets" />
+			<param name="objflt"  value="*" />
+		</antcall>	
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Flow" />
+			<param name="objext"  value="flow" />
+			<param name="objdir"  value="flows" />
+			<param name="objflt"  value="*" />
+		</antcall>	
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="FlowDefinition" />
+			<param name="objext"  value="flowDefinition" />
+			<param name="objdir"  value="flowDefinitions" />
+			<param name="objflt"  value="*" />
+		</antcall>	
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Group" />
+			<param name="objext"  value="group" />
+			<param name="objdir"  value="groups" />
+			<param name="objflt"  value="*" />
+		</antcall>		
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="GlobalValueSet" />
+			<param name="objext"  value="globalValueSet" />
+			<param name="objdir"  value="globalValueSets" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="HomePageComponent" />
+			<param name="objext"  value="homePageComponent" />
+			<param name="objdir"  value="homePageComponents" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="HomePageLayout" />
+			<param name="objext"  value="homePageLayout" />
+			<param name="objdir"  value="homePageLayouts" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Layout" />
+			<param name="objext"  value="layout" />
+			<param name="objdir"  value="layouts" />
+			<param name="objflt"  value="*" />
+			<param name="objexc"  value="*SocialPost*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Letterhead" />
+			<param name="objext"  value="letter" />
+			<param name="objdir"  value="letterhead" />
+			<param name="objflt"  value="*" />
+			<param name="objexc"  value="*SocialPost*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ListView" />
+			<param name="objext"  value="listView" />
+			<param name="objdir"  value="listViews" />
+			<param name="objflt"  value="*" />
+			<param name="objexc"  value="*SocialPost*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="LiveChatAgentConfig" />
+			<param name="objext"  value="liveChatAgentConfig" />
+			<param name="objdir"  value="liveChatAgentConfigs" />
+			<param name="objflt"  value="*" />
+			<param name="objexc"  value="*SocialPost*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="LiveChatAgentConfig" />
+			<param name="objext"  value="liveChatAgentConfig" />
+			<param name="objdir"  value="liveChatAgentConfigs" />
+			<param name="objflt"  value="*" />
+			<param name="objexc"  value="*SocialPost*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="LiveChatDeployment" />
+			<param name="objext"  value="liveChatDeployment" />
+			<param name="objdir"  value="liveChatDeployments" />
+			<param name="objflt"  value="*" />
+			<param name="objexc"  value="*SocialPost*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="LiveChatButton" />
+			<param name="objext"  value="liveChatButton" />
+			<param name="objdir"  value="liveChatButtons" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="NamedFilter" />
+			<param name="objext"  value="namedFilter" />
+			<param name="objdir"  value="namedFilters" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Network" />
+			<param name="objext"  value="network" />
+			<param name="objdir"  value="networks" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="MilestoneType" />
+			<param name="objext"  value="milestoneType" />
+			<param name="objdir"  value="milestoneTypes" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="PostTemplate" />
+			<param name="objext"  value="postTemplate" />
+			<param name="objdir"  value="postTemplates" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Queue" />
+			<param name="objext"  value="queue" />
+			<param name="objdir"  value="queues" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="QuickAction" />
+			<param name="objext"  value="quickAction" />
+			<param name="objdir"  value="quickActions" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ReportType" />
+			<param name="objext"  value="reportType" />
+			<param name="objdir"  value="reportTypes" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="PermissionSet" />
+			<param name="objext"  value="permissionset" />
+			<param name="objdir"  value="permissionsets" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Profile" />
+			<param name="objext"  value="profile" />
+			<param name="objdir"  value="profiles" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="RemoteSiteSetting" />
+			<param name="objext"  value="remoteSite" />
+			<param name="objdir"  value="remoteSiteSettings" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="SamlSsoConfig" />
+			<param name="objext"  value="samlSsoConfig" />
+			<param name="objdir"  value="samlSsoConfig" />
+			<param name="objflt"  value="*" />
+		</antcall>		
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ReportType" />
+			<param name="objext"  value="reporttype" />
+			<param name="objdir"  value="reporttypes" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Role" />
+			<param name="objext"  value="role" />
+			<param name="objdir"  value="roles" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Settings" />
+			<param name="objext"  value="settings" />
+			<param name="objdir"  value="settings" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="SharingReason" />
+			<param name="objext"  value="sharingReason" />
+			<param name="objdir"  value="sharingReasons" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Skill" />
+			<param name="objext"  value="skill" />
+			<param name="objdir"  value="skills" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="SynonymDictionary" />
+			<param name="objext"  value="synonymDictionary" />
+			<param name="objdir"  value="synonymDictionaries" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="StaticResource" />
+			<param name="objext"  value="resource" />
+			<param name="objdir"  value="staticresources" />
+			<param name="objflt"  value="*" />
+		</antcall>
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Territory" />
+			<param name="objext"  value="territory" />
+			<param name="objdir"  value="territorys" />
+			<param name="objflt"  value="*" />
+		</antcall>	
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Translations" />
+			<param name="objext"  value="translation" />
+			<param name="objdir"  value="translations" />
+			<param name="objflt"  value="*" />
+		</antcall>		
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="ValidationRule" />
+			<param name="objext"  value="validationRule" />
+			<param name="objdir"  value="validationRules" />
+			<param name="objflt"  value="*" />
+		</antcall>	
+
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Workflow" />
+			<param name="objext"  value="workflow" />
+			<param name="objdir"  value="workflows" />
+			<param name="objflt"  value="*" />
+			<param name="objexc"  value="Reply.workflow,SocialPost.workflow,Question.workflow" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="PathAssistant" />
+			<param name="objext"  value="pathAssistant" />
+			<param name="objdir"  value="pathAssistants" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Flexipage" />
+			<param name="objext"  value="flexipage" />
+			<param name="objdir"  value="flexipages" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="GlobalValueSetTranslation" />
+			<param name="objext"  value="globalValueSetTranslation" />
+			<param name="objdir"  value="globalValueSetTranslations" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="StandardValueSet" />
+			<param name="objext"  value="standardValueSet" />
+			<param name="objdir"  value="standardValueSets" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="StandardValueSetTranslation" />
+			<param name="objext"  value="standardValueSetTranslation" />
+			<param name="objdir"  value="standardValueSetTranslations" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Territory2Model" />
+			<param name="objext"  value="territory2Model" />
+			<param name="objdir"  value="territory2Models/ALL" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Territory2Rule" />
+			<param name="objext"  value="territory2Rule" />
+			<param name="objdir"  value="territory2Models/ALL/rules" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Territory2" />
+			<param name="objext"  value="territory2" />
+			<param name="objdir"  value="territory2Models/ALL/territories" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="Territory2Type" />
+			<param name="objext"  value="territory2Type" />
+			<param name="objdir"  value="territory2Types" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembers2">
+			<param name="objtyp"  value="CustomMetadata" />
+			<param name="objext"  value="md" />
+			<param name="objdir"  value="customMetadata" />
+			<param name="objflt"  value="*" />
+		</antcall>
+		
+		<antcall target="generatePackageMembersDocuments" />
+		<antcall target="generatePackageMembersReports" />
+		<antcall target="generatePackageMembersEmails" />
+		<antcall target="generatePackageMembersDashboards" />
+		<antcall target="generatePackageMembersAura" />
+		<antcall target="generatePackageMembersLWC" />
+		<antcall target="generatePackageMembersLabels" />		
+
+		<echo file="${stage.dir}/${target}" append="true"><![CDATA[	<version>45.0</version>
+</Package>]]></echo>
+	</target>
+	
+	<target name="generatePackageMembers2">
+		<script language="javascript"> 
+			<![CDATA[
+			
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+			 try
+			 { 
+			   var objtyp = project.getProperty('objtyp');
+			   var objext = project.getProperty('objext');
+			   var objdir = project.getProperty('objdir');
+			   var objflt = project.getProperty('objflt');
+			   var objexc = project.getProperty('objexc');
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+				 
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/" + objdir  +"/") );
+			   fs.setIncludes(objflt + "." + objext);
+			   fs.setExcludes(objexc);
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcFiles = ds.getIncludedFiles();
+			   for (i=0; i<srcFiles.length; i++) 
+			   {
+				   var filename = srcFiles[i];
+				   if(objtyp == 'AssignmentRule' || objtyp == 'EscalationRule')
+				   {
+					var file = new File(basedir, filename);
+					var br       = new BufferedReader(new InputStreamReader(new DataInputStream(new FileInputStream(file))));
+					while ((line = br.readLine()) != null)   
+					{        	
+						if (line.indexOf('<fullName>') > -1)
+						{
+						  var objname = filename.substring(0,filename.indexOf("." + objext));       
+						  msg+='<members>'+ objname + '.' + line.substring(line.indexOf('<fullName>') + 10,line.indexOf('</fullName>')) + '</members>\n';
+						}
+					}
+					continue;
+				   }
+				   filename = filename.substring(0,filename.indexOf("." + objext));       
+				   msg+='\t\t<members>' + filename + '</members>\n';
+			   }
+			   msg+='\t\t<name>' + objtyp + '</name>\n';
+			   msg+='\t</types>\n';
+               
+			   if(srcFiles.length > 0){
+			       var file = new File('./' + stage + '/', target);
+			       echo = project.createTask("echo");
+			       echo.setMessage(msg);
+			       echo.setAppend(true);
+			       echo.setFile(file);
+			       echo.perform();
+			   }
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+
+	<target name="generatePackageMembers">
+		<script language="javascript"> 
+			<![CDATA[java.lang.System.out.println('here'); 
+			
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+			 try
+			 { 
+			   var objtyp = project.getProperty('objtyp');
+			   var objext = project.getProperty('objext');
+			   var objdir = project.getProperty('objdir');
+			   var objflt = project.getProperty('objflt');
+			   var objexc = project.getProperty('objexc');
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/" + objdir  +"/") );
+			   fs.setIncludes(objflt + "." + objext);
+			   fs.setExcludes(objexc);
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcFiles = ds.getIncludedFiles();
+			   for (i=0; i<srcFiles.length; i++) 
+			   {
+				   var filename = srcFiles[i];
+				   if(objtyp == 'AssignmentRule' || objtyp == 'EscalationRule')
+				   {
+					var file = new File(basedir, filename);
+					var br       = new BufferedReader(new InputStreamReader(new DataInputStream(new FileInputStream(file))));
+					while ((line = br.readLine()) != null)   
+					{        	
+						if (line.indexOf('<fullName>') > -1)
+						{
+						  var objname = filename.substring(0,filename.indexOf("." + objext));       
+						  msg+='<members>'+ objname + '.' + line.substring(line.indexOf('<fullName>') + 10,line.indexOf('</fullName>')) + '</members>\n';
+						}
+					}
+					continue;
+				   }
+				   filename = filename.substring(0,filename.indexOf("." + objext));       
+				   msg+='\t\t<members>' + filename + '</members>\n';
+			   }
+			   msg+='\t\t<name>' + objtyp + '</name>\n';
+			   msg+='\t</types>\n';
+               
+			   if(srcFiles.length > 0){
+			       var file = new File('./' + stage + '/', target);
+			       echo = project.createTask("echo");
+			       echo.setMessage(msg);
+			       echo.setAppend(true);
+			       echo.setFile(file);
+			       echo.perform();
+			   }
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+
+	<target name="generatePackageMembersDocuments">
+		<script language="javascript"> 
+			<![CDATA[
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+
+			 try
+			 { 
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/documents/") );
+			   fs.setIncludes("*");
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcDirs = ds.getIncludedDirectories();
+			   
+			   for(i = 0; i < srcDirs.length; i++){
+					msg += '\t\t<members>' + srcDirs[i] + '</members>\n';
+					
+					fs = project.createDataType("fileset");
+					fs.setDir( new File("./" + stage + "/documents/" + srcDirs[i]) );
+					fs.setIncludes("*");
+					fs.setExcludes("*-meta.xml");
+					var basedir  = fs.getDir(project);
+					
+					ds = fs.getDirectoryScanner(project);
+					var srcFiles = ds.getIncludedFiles();
+					for (j=0; j<srcFiles.length; j++) 
+					{
+						msg += '\t\t<members>' + srcDirs[i] + '/' + srcFiles[j] + '</members>\n';
+					}
+			   }
+			   
+			   msg += '\t\t<name>Document</name>\n';
+			   msg += '\t</types>\n';
+			   
+			   var file = new File('./' + stage + '/', target);
+			   echo = project.createTask("echo");
+			   echo.setMessage(msg);
+			   echo.setAppend(true);
+			   echo.setFile(file);
+			   echo.perform();
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+	
+	<target name="generatePackageMembersEmails">
+		<script language="javascript"> 
+			<![CDATA[
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+
+			 try
+			 { 
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/email/") );
+			   fs.setIncludes("*");
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcDirs = ds.getIncludedDirectories();
+			   
+			   for(i = 0; i < srcDirs.length; i++){
+
+					msg += '\t\t<members>' + srcDirs[i] + '</members>\n';
+					
+					fs = project.createDataType("fileset");
+					fs.setDir( new File("./" + stage + "/email/" + srcDirs[i]) );
+					fs.setIncludes("*.email");
+					fs.setExcludes("*-meta.xml");
+					var basedir  = fs.getDir(project);
+					
+					ds = fs.getDirectoryScanner(project);
+					var srcFiles = ds.getIncludedFiles();
+					for (j=0; j<srcFiles.length; j++) 
+					{
+					  var objname = srcFiles[j].substring(0,srcFiles[j].indexOf(".email"));  
+						msg += '\t\t<members>' + srcDirs[i] + '/' + objname + '</members>\n';
+					}
+			   }
+			   
+			   msg += '\t\t<name>EmailTemplate</name>\n';
+			   msg += '\t</types>\n';
+			   
+			   var file = new File('./' + stage + '/', target);
+			   echo = project.createTask("echo");
+			   echo.setMessage(msg);
+			   echo.setAppend(true);
+			   echo.setFile(file);
+			   echo.perform();
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+
+	<target name="generatePackageMembersReports">
+		<script language="javascript"> 
+			<![CDATA[
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+
+			 try
+			 { 
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/reports/") );
+			   fs.setIncludes("*");
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcDirs = ds.getIncludedDirectories();
+			   
+			   for(i = 0; i < srcDirs.length; i++){
+					msg += '\t\t<members>' + srcDirs[i] + '</members>\n';
+					
+					fs = project.createDataType("fileset");
+					fs.setDir( new File("./" + stage + "/reports/" + srcDirs[i]) );
+					fs.setIncludes("*.report");
+					fs.setExcludes("*-meta.xml");
+					var basedir  = fs.getDir(project);
+					
+					ds = fs.getDirectoryScanner(project);
+					var srcFiles = ds.getIncludedFiles();
+					for (j=0; j<srcFiles.length; j++) 
+					{
+						var objname = srcFiles[j].substring(0,srcFiles[j].indexOf(".report"));
+						msg += '\t\t<members>' + srcDirs[i] + '/' + objname + '</members>\n';
+					}
+			   }
+			   
+			   msg += '\t\t<name>Report</name>\n';
+			   msg += '\t</types>\n';
+			   
+			   var file = new File('./' + stage + '/', target);
+			   echo = project.createTask("echo");
+			   echo.setMessage(msg);
+			   echo.setAppend(true);
+			   echo.setFile(file);
+			   echo.perform();
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+
+	<target name="generatePackageMembersDashboards">
+		<script language="javascript"> 
+			<![CDATA[
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+
+			 try
+			 { 
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/dashboards/") );
+			   fs.setIncludes("*");
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcDirs = ds.getIncludedDirectories();
+			   
+			   for(i = 0; i < srcDirs.length; i++){
+					msg += '\t\t<members>' + srcDirs[i] + '</members>\n';
+					
+					fs = project.createDataType("fileset");
+					fs.setDir( new File("./" + stage + "/dashboards/" + srcDirs[i]) );
+					fs.setIncludes("*.dashboard");
+					fs.setExcludes("*-meta.xml");
+					var basedir  = fs.getDir(project);
+					
+					ds = fs.getDirectoryScanner(project);
+					var srcFiles = ds.getIncludedFiles();
+					for (j=0; j<srcFiles.length; j++) 
+					{
+						var objname = srcFiles[j].substring(0,srcFiles[j].indexOf(".dashboard"));
+						msg += '\t\t<members>' + srcDirs[i] + '/' + objname + '</members>\n';
+					}
+			   }
+			   
+			   msg += '\t\t<name>Dashboard</name>\n';
+			   msg += '\t</types>\n';
+			   
+			   var file = new File('./' + stage + '/', target);
+			   echo = project.createTask("echo");
+			   echo.setMessage(msg);
+			   echo.setAppend(true);
+			   echo.setFile(file);
+			   echo.perform();
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+
+	<target name="generatePackageMembersAura">
+		<script language="javascript"> 
+			<![CDATA[
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+
+			 try
+			 { 
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/aura/") );
+			   fs.setIncludes("*");
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcDirs = ds.getIncludedDirectories();
+			   
+			   for(i = 0; i < srcDirs.length; i++)
+			   {
+					msg += '\t\t<members>' + srcDirs[i] + '</members>\n';				
+			   }
+			   
+			   msg += '\t\t<name>AuraDefinitionBundle</name>\n';
+			   msg += '\t</types>\n';
+			   
+			   var file = new File('./' + stage + '/', target);
+			   echo = project.createTask("echo");
+			   echo.setMessage(msg);
+			   echo.setAppend(true);
+			   echo.setFile(file);
+			   echo.perform();
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+    <target name="generatePackageMembersLWC">
+		<script language="javascript"> 
+			<![CDATA[
+			 var version = java.lang.System.getProperty("java.version");
+			 if (version.startsWith("1.8.0")) {
+				load("nashorn:mozilla_compat.js");
+			 }
+			 importPackage(java.io);	
+
+			 try
+			 { 
+			   var stage  = project.getProperty('stage.dir');
+			   var target  = project.getProperty('target');
+
+			   var msg = '';
+			   msg+='\t<types>\n';
+
+			   fs = project.createDataType("fileset");
+			   fs.setDir( new File("./" + stage + "/lwc/") );
+			   fs.setIncludes("*");
+			   var basedir  = fs.getDir(project);
+
+			   ds = fs.getDirectoryScanner(project);
+			   var srcDirs = ds.getIncludedDirectories();
+			   
+			   for(i = 0; i < srcDirs.length; i++)
+			   {
+					msg += '\t\t<members>' + srcDirs[i] + '</members>\n';				
+			   }
+			   
+			   msg += '\t\t<name>LightningComponentBundle</name>\n';
+			   msg += '\t</types>\n';
+			   
+			   var file = new File('./' + stage + '/', target);
+			   echo = project.createTask("echo");
+			   echo.setMessage(msg);
+			   echo.setAppend(true);
+			   echo.setFile(file);
+			   echo.perform();
+			  }
+			  catch(e){} //Do nothing because folder might not exist, no issue
+			]]>
+		</script>
+	</target>
+	<target name="generatePackageMembersLabels">
+		<script language="javascript"> 
+			<![CDATA[ 
+			  try
+			  { 
+				  var version = java.lang.System.getProperty("java.version");
+				  if (version.startsWith("1.8.0")) {
+					 load("nashorn:mozilla_compat.js");
+				  }
+				  importPackage(java.io);
+				  var stage  = project.getProperty('stage.dir');
+				  var target  = project.getProperty('target');
+				  fs = project.createDataType("fileset");
+				  fs.setDir( new File("./" + stage + "/labels/") );
+				  fs.setIncludes("CustomLabels.labels");
+				  fs.setExcludes(".svn");
+				  var basedir  = fs.getDir(project);
+				  ds = fs.getDirectoryScanner(project);
+				  var srcFiles = ds.getIncludedFiles();
+
+				  var strEcho  = '';
+				  strEcho+='\n\t<types>\n';
+				  for (i=0; i<srcFiles.length; i++) 
+				  {
+					var filename = srcFiles[i];
+					var file = new File(basedir, filename);
+					var b        = false;
+					var br       = new BufferedReader(new InputStreamReader(new DataInputStream(new FileInputStream(file))));
+					while ((line = br.readLine()) != null)   
+					{
+					  if (line.indexOf('<labels>' ) > -1){b=true ;}
+					  if (line.indexOf('</labels>') > -1){b=false;}
+					  if (b==true)
+					  {
+						if (line.indexOf('<fullName>') > -1)
+						{
+						  strEcho+='\t\t<members>'+ line.substring(line.indexOf('<fullName>') + 10,line.indexOf('</fullName>')) + '</members>\n';
+						  b=false;
+						}
+					  }
+					}
+				   }  
+
+				   strEcho+='\t\t<name>CustomLabel</name>\n';
+				   strEcho+='\t</types>\n';
+				   var file2 = new File('./' + stage + '/', target);
+				   echo = project.createTask("echo");
+				   echo.setMessage(strEcho);
+				   echo.setFile(file2);
+				   echo.setAppend(true);
+				   echo.perform();
+				   strEcho='';
+			   } 
+			   catch(e){}
+
+			]]>
+		</script>
+	</target>
+</project>

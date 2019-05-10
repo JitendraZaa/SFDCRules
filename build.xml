@@ -3,6 +3,8 @@
     <property file="build.properties"/>
     <property environment="env"/>
 
+    <import file="package_generator.xml"/>
+
     <!-- Setting default value for username, password and session id properties to empty string 
          so unset values are treated as empty. Without this, ant expressions such as ${sf.username}
          will be treated literally.
