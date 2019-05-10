@@ -248,11 +248,16 @@ cd "`echo $s_path`"
 if grep -q "^src" project-manifest.txt ; then
         grep "^src" project-manifest.txt| grep -v 'src/labels' > delta.txt
 		grep "^src" project-manifest.txt| grep '^src/labels' >> delta.txt
-		
+
+
+
 	## Handle Placement of Labels in the manifest - bring it on top
 	##grep "^src/labels" project-manifest.txt | grep -v "/labels" > labels.txt
 	sed -i "1r labels.txt" delta.txt
-    echo "Delta file is as follows:"
+    echo '************* Removing last blank line from delta.txt ************'
+	sed '$d' delta.txt
+	echo '************* DONE Removing last blank line ************'
+	echo "Delta file is as follows:"
 	echo "-----------------------------------------------------------"
 	cat "`echo $s_path`"/delta.txt
 	
@@ -301,6 +306,11 @@ fi
 	echo "project-manifest.txt file is as follows:"
 	echo "-----------------------------------------------------------"
 	cat "`echo $s_path`"/../project-manifest.txt
+
+	echo '************* Removing last blank line from project-manifest ************'
+	sed '$d' ../project-manifest
+	echo '************* DONE - Removing last blank line ************'
+
 
 # Case to handle when project manifest was not changed in between a given commitid
 
