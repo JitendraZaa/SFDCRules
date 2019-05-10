@@ -5,7 +5,7 @@
  * */
 public class AndOperation extends Operation
 {    
-    public AndOperation(String symbol)
+    public AndOperation(String symbol) 
     {
         super(symbol);
     } 
