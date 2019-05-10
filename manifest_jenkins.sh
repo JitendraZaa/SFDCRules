@@ -25,7 +25,7 @@ fi
 #count=$(git rev-parse HEAD | wc -l )
 #last_commitID=$(git log --format="%h" -n 1)
 
-count=$(git log --pretty=oneline HEAD...$1 --first-parent | wc -l )
+count=$(git log --pretty=oneline HEAD $1 --first-parent | wc -l )
 last_commitID=$(git log --format="%h" -n 1)
 
 
