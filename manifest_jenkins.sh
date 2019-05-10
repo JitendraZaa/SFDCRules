@@ -308,7 +308,7 @@ fi
 	cat "`echo $s_path`"/../project-manifest.txt
 
 	echo '************* Removing last blank line from project-manifest ************'
-	sed '$d' ../project-manifest
+	sed '$d' ../project-manifest.txt
 	echo '************* DONE - Removing last blank line ************'
 
 
