@@ -48,10 +48,10 @@ else
 	fi
 				
 	## command to prepare components file
-	git diff --diff-filter=MARCT  HEAD~$count --name-only >> components.txt
+	git diff --diff-filter=MARCT  HEAD $1 --name-only >> components.txt
 	
 	## Possible deleted Components
-	git diff --diff-filter=D  HEAD~$count --name-only > del_components.txt
+	git diff --diff-filter=D  HEAD $1 --name-only > del_components.txt
 
 	## Generate the file containing all the list of components to be which were commited
 	truncate -s 0 componentsFile.txt
