@@ -1,0 +1,7 @@
+global enum RelationshipCardinality {
+CARDINALITY_UNSPECIFIED,
+MANYTOONE,
+ONETOMANY,
+ONETOONE,
+UNRECOGNIZED
+}

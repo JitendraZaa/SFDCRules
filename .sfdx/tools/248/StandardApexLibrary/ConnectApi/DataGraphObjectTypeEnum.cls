@@ -1,0 +1,6 @@
+global enum DataGraphObjectTypeEnum {
+CI,
+DMO,
+OBJECTTYPEUNSPECIFIED,
+UNRECOGNIZED
+}

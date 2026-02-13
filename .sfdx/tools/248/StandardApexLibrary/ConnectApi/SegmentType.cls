@@ -1,0 +1,6 @@
+global enum SegmentType {
+DBT,
+EINSTEINGPTSEGMENTSUI,
+LOOKALIKE,
+WATERFALL
+}

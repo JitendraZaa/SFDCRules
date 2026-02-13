@@ -1,0 +1,6 @@
+global enum DecisionTableType {
+ADVANCED,
+HIGHVOLUME,
+LOWVOLUME,
+MEDIUMVOLUME
+}
